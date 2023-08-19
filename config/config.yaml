@@ -20,7 +20,7 @@ endpoints:
     #     description: "healthcheck failed"
     #     send-on-resolved: true
   - name: ledger-backend
-    url: "https://old.codus.me"
+    url: "https://api-ledger.cerana.tech/"
     interval: 60m
     conditions:
       - "[STATUS] == 200"
