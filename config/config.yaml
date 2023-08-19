@@ -8,7 +8,8 @@
 #     to: "codus@codus.me"
 
 endpoints:
-  - name: ledger-frontend
+  - name: ledger-frontend-pord
+    group: ledger
     url: "https://ledger.cerana.tech/"
     interval: 60m
     conditions:
@@ -19,8 +20,21 @@ endpoints:
     #     enabled: true
     #     description: "healthcheck failed"
     #     send-on-resolved: true
-  - name: ledger-backend
-    url: "https://api-ledger.cerana.tech/"
+  - name: ledger-backend-prod
+    group: ledger
+    url: "https://asia-east1-ceranapos.cloudfunctions.net/api/health/"
+    interval: 60m
+    conditions:
+      - "[STATUS] == 200"
+      - "[RESPONSE_TIME] < 2000"
+    # alerts:
+    #   - type: email
+    #     enabled: true
+    #     description: "codus.me healthcheck failed"
+    #     send-on-resolved: true
+  - name: ledger-backend-dev
+    group: ledger
+    url: "https://asia-east1-ceranapos.cloudfunctions.net/dev/health/"
     interval: 60m
     conditions:
       - "[STATUS] == 200"
