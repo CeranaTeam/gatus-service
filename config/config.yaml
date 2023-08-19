@@ -1,0 +1,32 @@
+# alerting:
+#   email:
+#     from: "mailer@codus.me"
+#     username: "mailer@codus.me"
+#     password: "{{MY APPLICATION PASSWORD}}"
+#     host: "smtp.gmail.com"
+#     port: 587
+#     to: "codus@codus.me"
+
+endpoints:
+  - name: ledger-frontend
+    url: "https://ledger.cerana.tech/"
+    interval: 60m
+    conditions:
+      - "[STATUS] == 200"
+      - "[RESPONSE_TIME] < 1000"
+    # alerts:
+    #   - type: email
+    #     enabled: true
+    #     description: "healthcheck failed"
+    #     send-on-resolved: true
+  - name: ledger-backend
+    url: "https://old.codus.me"
+    interval: 60m
+    conditions:
+      - "[STATUS] == 200"
+      - "[RESPONSE_TIME] < 2000"
+    # alerts:
+    #   - type: email
+    #     enabled: true
+    #     description: "codus.me healthcheck failed"
+    #     send-on-resolved: true
