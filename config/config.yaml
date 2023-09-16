@@ -8,6 +8,13 @@
 #     to: "codus@codus.me"
 
 endpoints:
+  - name: cerana-official
+    group: core
+    url: "https://cerana.tech/"
+    interval: 60m
+    conditions:
+      - "[STATUS] == 200"
+      - "[RESPONSE_TIME] < 2000"
   - name: ledger-frontend-pord
     group: ledger
     url: "https://ledger.cerana.tech/"
