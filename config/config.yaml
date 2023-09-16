@@ -14,7 +14,7 @@ endpoints:
     interval: 60m
     conditions:
       - "[STATUS] == 200"
-      - "[RESPONSE_TIME] < 1000"
+      - "[RESPONSE_TIME] < 5000"
     # alerts:
     #   - type: email
     #     enabled: true
@@ -26,7 +26,7 @@ endpoints:
     interval: 60m
     conditions:
       - "[STATUS] == 200"
-      - "[RESPONSE_TIME] < 2000"
+      - "[RESPONSE_TIME] < 5000"
     # alerts:
     #   - type: email
     #     enabled: true
@@ -38,7 +38,7 @@ endpoints:
     interval: 60m
     conditions:
       - "[STATUS] == 200"
-      - "[RESPONSE_TIME] < 2000"
+      - "[RESPONSE_TIME] < 5000"
     # alerts:
     #   - type: email
     #     enabled: true
